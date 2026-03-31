@@ -1,0 +1,66 @@
+/* NAUTILIUS CORE - DeeP SEA INTERFACE */
+:root {
+    --core-spark: #00ff88; /* YOur Energy Source */
+    --hull-black: #0a0a0b; /* The Deep Void */
+    --neon-glow: rgba(0, 255, 136, 0.3);
+    --warning-red: #ff3e3e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--hull-black);
+    color: var(--core-spark);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    /*Subtle scanline effect */
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.2) 50%,
+    ), var(--hull-black);
+    background-size: 100% 4px;
+}
+
+#nautilius-interface {
+    border: 1px solid var(--core-spark);
+    padding: 3rem;
+    border-radius: 10px;
+    background: rgba(0, 255, 136, 0.02);
+    box-shadow: 0 0 25px var(--neon-glow), 
+                inset 0 0 15px rgba(0, 255, 136, 0.05);
+    text-align: center;
+    border-left: 5px solid var(--core-spark); /* Structureal Reinforcments */
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px var(--core-spark);
+    margin-bottom: : 1rem;
+}
+
+.status-line {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+/* Pulse animation for the Core */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100 { opacity: 1; }
+}
+
+.active-pulse {
+    animation: pulse 2s infinite;
+}
