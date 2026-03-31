@@ -33,10 +33,12 @@ body {
     display: flex;
     flex-direction: column; /* items verticaly*/
     align-items: center;
+    gap: 2.5rem;
+    align-items: center;;
     width: 90%; /* Uses 90% of available width*/
     max-width: 1000px; /*never wider than 1000px*/
     border: 1px solid var(--core-spark);
-    padding: 2rem;
+    padding: 3rem;
     border: 1px solid var(--core-spark);
     background: rgba(0, 255, 136, 0.05);
     box-shadow: 0 0 25px var(--neon-glow), 
@@ -71,7 +73,7 @@ h1 {
 }
 
 #mantra-output {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     letter-spacing: 10px;
     text-transform: uppercase;
     text-shadow: 0 0 15px var(--core-spark);
@@ -82,9 +84,34 @@ h1 {
     margin bottom: 1rem;
 }
 
+#mantra-text {
+    color: var(--core-spark);
+    font-size: 1rem; /* little readable font*/
+    line-height: 1.5; 
+    text-align: left;
+    padding: 10px 20px;
+    word-wrap: break-word;
+}
+
 #mantra-module {
     width: 100%;
+    box-sizing: border-box;
     word-wrap: break-word; /* Prevents text from leaking out*/
     overflow-wrap: break-word;
+    text-align: left;
+    line-height:2.6;
     font-size: clamp(0.8rem, 2vw, 1.2rem); /* Dynamic font size!*/
+    margin-top: 2rem;
+    padding: 0 2rem;
+    line-height: 1.8;
+}
+
+@keyframes pulse-critical {
+    0% { box-shadow: 0 0 15px var(--core-spark); border-color: var(--core-spark); }
+    50% { box-shadow: 0 0 35px var(--warning-red); border-color: var(--warning-red); }
+    100% { box-shadow: 0 0 15px var(--core-spark); border-color: var(--core-spark); }
+}
+
+.status-line.active-pulse {
+    animation: pulse-critical 1.5s infinite ease-in-out;
 }
