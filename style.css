@@ -24,7 +24,7 @@ body {
     /*Subtle scanline effect */
     background: linear-gradient(
         rgba(18, 16, 16, 0) 50%,
-        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.2) 50% 
     ), var(--hull-black);
     background-size: 100% 4px;
 }
@@ -63,4 +63,14 @@ h1 {
 
 .active-pulse {
     animation: pulse 2s infinite;
+}
+
+#mantra-terminal {
+    font-family: 'Courier New', monospace;
+    color: #00ff88;
+    padding: 20px;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00ff88;
+    max-width: 800px;
+    margin: 50px auto;
 }
