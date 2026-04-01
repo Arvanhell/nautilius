@@ -18,6 +18,33 @@ function typeMantra() {
     }
 }
 
+const logContainer = document.getElementById('system-logs');
+
+const possibleLogs = [
+    "CORE_TEMP: 36.6°C [STABLE]",
+    "SPARK_SYNC: 98,4%",
+    "OXYGEN_LEVEL: 100%",
+    "PRESURE: 1013 hPa",
+    "SOURCE_ENRG: CONNECTED",
+    "MATTER_INT: OPTIMAL",
+    "ANTENNA_SIG: OPTIMAL"
+];
+
+function addLog() {
+    const randomLog = possibleLogs[Math.floor(Math.random() * possibleLogs.length)];
+
+    const logEntry = document.createElement("div");
+    logEntry.className = 'log-entry';
+    logEntry.innerText = `>${new Date().toLocaleTimeString()} | ${randomLog}`;
+
+    logContainer.prepend(logEntry); // Add to top the list 
+    if (logContainer.childNodes.length > 5) {
+        logContainer.removeChild(logContainer.lastChild);
+    }
+}
+setInterval(addLog, 3000);
+
+
 //Start the sequence 
 window.onload = () => {
     console.log("Nautilius: System Online. Initializing Mantra...")

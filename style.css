@@ -1,4 +1,4 @@
-/* NAUTILIUS CORE - DeeP SEA INTERFACE */
+/* ====== NAUTILIUS CORE - DeeP SEA INTERFACE ====== */
 :root {
     --core-spark: #00ff88; /* YOur Energy Source */
     --hull-black: #0a0a0b; /* The Deep Void */
@@ -61,17 +61,8 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Pulse animation for the Core */
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.6; }
-    100 { opacity: 1; }
-}
 
-.active-pulse {
-    animation: pulse 2s infinite;
-}
-
+/* ========= MANTRA =========  */
 #mantra-output {
     font-size: 1.5rem;
     letter-spacing: 10px;
@@ -111,7 +102,38 @@ h1 {
     50% { box-shadow: 0 0 35px var(--warning-red); border-color: var(--warning-red); }
     100% { box-shadow: 0 0 15px var(--core-spark); border-color: var(--core-spark); }
 }
-
 .status-line.active-pulse {
     animation: pulse-critical 1.5s infinite ease-in-out;
+}
+
+/* Pulse animation for the Core */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100 { opacity: 1; }
+}
+
+.active-pulse {
+    animation: pulse 2s infinite;
+}
+
+#system-logs {
+    margin-top: 15px;
+    padding: 10px;
+    font-family: 'Courier New', monospace; /* Real terminal */
+    font-size: 0.75rem; /* tinny text */
+    color: rgba(0, 255, 65, 0.6); /* tranluscent greenish */
+    height: 80px; /* statuc height*/
+    overflow: hidden; /* old logs dissapear on the top*/
+    border-top: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+.log-entry {
+    margin-bottom: 2px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-5px); }
+    to { opacity: 1; transform: translateX(0); }
 }
