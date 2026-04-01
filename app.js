@@ -44,7 +44,17 @@ function addLog() {
 }
 setInterval(addLog, 3000);
 
+const systemStatuses = [
+    "OPTIMAl", "SYNCHRONIZING", "POWER FLOW: HIGH", "SPARK_CORE: ACTIVE", "SCANNING..."
+];
+// Function is swapping text each in 5sec
+function updateFooterStatus() {
+    const statusText = systemStatuses[Math.floor(Math.random() * systemStatuses.length)];
+    // footer 
+    document.getElementById('system-status-text').innerText = `SYSTEM STATUS: ${statusText}`;
+}
 
+setInterval(updateFooterStatus, 5000);
 //Start the sequence 
 window.onload = () => {
     console.log("Nautilius: System Online. Initializing Mantra...")
